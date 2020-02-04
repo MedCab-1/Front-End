@@ -12,6 +12,9 @@ export default function App() {
         <Route path='loginform' >
           <LoginForm />
         </Route>
+        <Route path='signup' >
+          <Signup />
+        </Route>
           <Footer />
     </div>
   );
