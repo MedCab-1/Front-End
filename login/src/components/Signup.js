@@ -42,9 +42,7 @@ const Signup = ({ values, errors, touched, status, history }) => {
                     </Form>
                     {/* {newUser.map(user => {
                         <ul key={user.id}>
-                            <li>First Name: {user.first_name}</li>
-                            <li>Last Name: {user.first_name}</li>
-                            <li>Email: {user.email}</li>
+                            <li>Username: {user.username}</li>
                             <li>Password: {user.password}</li>
                         </ul>
                     })} */}

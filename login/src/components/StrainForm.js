@@ -102,7 +102,7 @@ const FormikStrains = withFormik({
             type: type || '',
             effect: effect || '',
             flavor: flavor || ''
-        }
+        } //the return above might need to change
     }, 
     
     handleSubmit(values, {setStatus}) {
