@@ -5,6 +5,13 @@ import axios from 'axios';
 
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
+    // const [user, setUser] = useState([]);
+
+    // useEffect(() => {
+    //     if (status === true) {
+    //         history.pushState('/')
+    //     }
+    // }, [status]);
     return (
         <form>
             <div>
@@ -29,13 +36,13 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
         },
         validationSchema: Yup.object().shape({
             username: Yup.string()
-                .required('Please enter a username'),
+                .required('Field required'),
             password: Yup.string()
                 .min(8, "Password must be at least 8 characters")
-                .required('Please enter a password')
+                .required('Field required')
         }),
         handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-            axios.post('', values)
+            axios.post('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
                 resetForm();
