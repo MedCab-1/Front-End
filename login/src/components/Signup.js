@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { withFormik, Form, Field } from 'formik';
 
-const Signup = ({ values, errors, touched, status, history }) => {
+const Signup = ({ values, errors, touched }) => {
     // const [newUser, setNewUser] = useState([]);
 
     // useEffect(() => {
