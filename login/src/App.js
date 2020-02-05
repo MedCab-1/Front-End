@@ -1,16 +1,24 @@
 import React from 'react';
-import './App.css';
+import LoginForm from './components/LoginForm'
+import { Route } from 'react-router-dom';
+import Footer from './components/Footer';
+import Header from './components/header';
 import Signup from './components/Signup';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-function App() {
+
+export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Route exact path='/' component={Signup} />
-      </div>
-    </Router>
-  );
-}
 
-export default App;
+    <div className="App">
+          <Header />
+        <Route path='loginform' >
+          <LoginForm />
+        </Route>
+        <Route path='signup' >
+          <Signup />
+          <Route exact path='/' component={Signup} />
+        </Route>
+          <Footer />
+    </div>
+  )
+  }
