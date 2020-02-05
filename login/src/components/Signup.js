@@ -20,31 +20,13 @@ const Signup = ({ values, errors, touched, status, history }) => {
                     <Form>
                         <Field
                             type='text'
-                            name='first_name'
-                            placeholder='First Name' 
+                            name='username'
+                            placeholder='Username' 
                             />
-                        {touched.first_name && errors.first_name && (
+                        {touched.username && errors.username && (
                             <p className='errors'>
-                                {errors.first_name} </p>
+                                {errors.username} </p>
                             )}
-                        <Field
-                            type='text'
-                            name='last_name'
-                            placeholder='Last Name' 
-                            />
-                        {touched.last_name && errors.last_name && (
-                            <p className='errors'>
-                                {errors.last_name} </p>
-                            )}
-                        <Field
-                            type='text'
-                            name='email'
-                            placeholder='Email'
-                            />
-                        {touched.email && errors.email && (
-                            <p className='errors'>
-                            {errors.email}</p>
-                        )}
                         <Field  
                             type='password'
                             name='password'
@@ -60,9 +42,7 @@ const Signup = ({ values, errors, touched, status, history }) => {
                     </Form>
                     {/* {newUser.map(user => {
                         <ul key={user.id}>
-                            <li>First Name: {user.first_name}</li>
-                            <li>Last Name: {user.first_name}</li>
-                            <li>Email: {user.email}</li>
+                            <li>Username: {user.username}</li>
                             <li>Password: {user.password}</li>
                         </ul>
                     })} */}
@@ -71,27 +51,22 @@ const Signup = ({ values, errors, touched, status, history }) => {
 };
 
 const FormikSignUpForms = withFormik ({
-    mapPropsToValues({ first_name, last_name, email, password }) {
+    mapPropsToValues({ username, password }) {
         return {
-            first_name: first_name || '',
-            last_name: last_name || '',
-            email: email || '',
+            username: username || '',
             password: password || ''
         };
     },
     validationSchema: Yup.object().shape({
         username: Yup.string().required('Required Field'),
-        email: Yup.string().required('Required Field'),
         password: Yup.string().required('Required Field')
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
-        const URL = ''; // need to insert link to next page when it's built
+        const URL = 'https://med-cabinet-1.herokuapp.com/'; 
 
         const newUsers = {
-            first_name: values.first_name,
-            last_name: values.last_name,
-            primaryemail: values.email,
+            username: values.username,
             password: values.password
         };
 
@@ -100,7 +75,7 @@ const FormikSignUpForms = withFormik ({
             .then(res => {
                 console.log(`Login Successful`, res);
                 setStatus(res.data);
-                props.history.push(''); //need to insert link to next page when it's built
+                props.history.push('/'); 
             })
             .catch(err => console.log(err.response))
     }
