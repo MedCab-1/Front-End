@@ -63,7 +63,7 @@ const FormikSignUpForms = withFormik ({
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
-        const URL = '';  /// need to add correct route
+        const URL = 'https://med-cabinet-1.herokuapp.com/api/user/register'; 
 
         const newUsers = {
             username: values.username,
@@ -75,7 +75,7 @@ const FormikSignUpForms = withFormik ({
             .then(res => {
                 console.log(`Login Successful`, res);
                 setStatus(res.data);
-                props.history.push('/'); 
+                props.history.push('/display'); 
             })
             .catch(err => console.log(err.response))
     }

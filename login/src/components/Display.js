@@ -5,7 +5,8 @@ import React from 'react';
 const Display = () => {
     return (
         <div>
-          <h1>Med Cabinet Main Page</h1>
+          <h1>Med Cabinet Main Page</h1> 
+          {/* delete title after we import components */}
         </div>
     );
 };
