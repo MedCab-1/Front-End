@@ -3,6 +3,8 @@ import { Formik, Form, Field, ErrorMessage, withFormik, validateYupSchema, yupTo
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../App.css'
+
 
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
@@ -14,17 +16,22 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
     //     }
     // }, [status]);
     return (
-        <form>
-            <div>
-                {touched.username && errors.username && <p>{errors.username}</p>}
-                <Field type="username" name="username" placeholder="username" />
-            </div>
-            <div>
-                {touched.password && errors.password && <p>{errors.password}</p>}
-                <Field type="password" name="password" placeholder="password" />
-            </div>
-            <button disabled={isSubmitting}>Login</button>
-        </form>
+        <div className="login">
+            <h1>Welcome</h1>
+            <h3>Log in to view your account</h3>
+            <h3>Don't have an account? <Link to='/Signup'>Sign up</Link></h3>
+            <form>
+                <div>
+                    {touched.username && errors.username && <p>{errors.username}</p>}
+                    <Field type="username" name="username" placeholder="username" />
+                </div>
+                <div>
+                    {touched.password && errors.password && <p>{errors.password}</p>}
+                    <Field type="password" name="password" placeholder="password" />
+                </div>
+                <button disabled={isSubmitting}>Login</button>
+            </form>
+        </div>
       );
     }
     

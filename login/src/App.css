@@ -1,7 +1,25 @@
 .App {
   text-align: center;
+  background-color: gray;
 }
 
+.header {
+  margin-bottom: 5%;
+}
+
+.sign-up {
+  margin: 5% 35%;
+  background-color: lime;
+}
+
+.login {
+  margin: 5% 35%;
+  background-color: lime;
+}
+
+.footer {
+  margin-top: 10%;
+}
 
 
 .App-logo {
