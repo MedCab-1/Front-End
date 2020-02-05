@@ -3,10 +3,12 @@ import LoginForm from './components/LoginForm'
 import { Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/header';
-import './App.css';
+import Signup from './components/Signup';
+
 
 export default function App() {
   return (
+
     <div className="App">
           <Header />
         <Route path='loginform' >
@@ -14,8 +16,9 @@ export default function App() {
         </Route>
         <Route path='signup' >
           <Signup />
+          <Route exact path='/' component={Signup} />
         </Route>
           <Footer />
     </div>
-  );
-}
+  )
+  }
