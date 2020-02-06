@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Signup from './components/Signup';
 import './App.css'
 import cannabisleaf from './images/cannabis-leaf.png'
+import GetStrains from './components/GetStrains';
 
 export default function App() {
   return (
@@ -18,6 +19,9 @@ export default function App() {
         </Route>
         <Route path='/Signup' >
           <Signup />
+        </Route>
+        <Route path='/GetStrains' >
+          <GetStrains />
         </Route>
           <Footer />
     </div>
