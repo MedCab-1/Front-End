@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import { withFormik, Form, Field } from 'formik';
 import '../App.css'
 
+    // const [newUser, setNewUser] = useState([]);
 
 const Signup = ({ values, errors, touched, status, history }) => {
 
@@ -52,6 +53,7 @@ const FormikSignUpForms = withFormik ({
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
+
         const URL = 'https://med-cab-backend.herokuapp.com/api/user/register'; 
 
         const newUsers = {

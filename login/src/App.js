@@ -11,6 +11,7 @@ import GetStrains from './components/GetStrains';
 import PrivateRoute from './components/PrivateRoute';
 import Display from './components/Display';
 
+
 export default function App() {
   return (
     <div className="App">

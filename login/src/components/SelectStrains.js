@@ -1,5 +1,6 @@
 // import React, {useState} from 'react';
 // import { Button, ButtonGroup } from 'reactstrap';
+// import '../App.css';
 
 // const SelectStrains = (props) => { 
 //     const [type, setType] = useState(null);
