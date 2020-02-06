@@ -3,18 +3,11 @@ import { Formik, Form, Field, ErrorMessage, withFormik, validateYupSchema, yupTo
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import '../App.css'
+import '../App.css';
 
 
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
-    // const [user, setUser] = useState([]);
-
-    // useEffect(() => {
-    //     if (status === true) {
-    //         history.pushState('/')
-    //     }
-    // }, [status]);
     return (
         <div className="login">
             <h1>Welcome</h1>
@@ -50,7 +43,7 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 .required('Field required')
         }),
         handleSubmit(values, { setStatus, props }) {
-            axios.post('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
+            axios.get('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
                 setStatus(res.data);

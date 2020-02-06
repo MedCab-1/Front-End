@@ -6,23 +6,20 @@ import Header from './components/Header';
 import Signup from './components/Signup';
 import './App.css'
 import cannabisleaf from './images/cannabis-leaf.png'
-import GetStrains from './components/GetStrains';
 
 export default function App() {
   return (
 
     <div className="App">
           <Header />
-          <img src={cannabisleaf}/>
+          <div><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/></div>
         <Route path='/LoginForm' >
           <LoginForm />
         </Route>
         <Route path='/Signup' >
           <Signup />
         </Route>
-        <Route path='/GetStrains' >
-          <GetStrains />
-        </Route>
+        <div><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/><img src={cannabisleaf}/></div>
           <Footer />
     </div>
   )

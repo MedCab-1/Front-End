@@ -2,7 +2,7 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import Signup from './Signup';
 import { Link } from 'react-router-dom';
-import '../App.css'
+import '../App.css';
 
 
 export default function Header() {
@@ -11,6 +11,5 @@ export default function Header() {
             <h1>Med Cabinet</h1>
             <div><Link to="/loginform">Log In</Link></div>
             <div><Link to="/signup">Sign Up</Link></div>
-            <div><Link to="/GetStrains">See What We Have to Offer</Link></div>
         </div>
 )}

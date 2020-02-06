@@ -1,20 +1,22 @@
 .App {
   text-align: center;
-  background-color: gray;
 }
 
 .header {
   margin-bottom: 5%;
+  font-size: xx-large;
 }
 
 .sign-up {
   margin: 5% 35%;
   background-color: lime;
+  opacity: .6;
 }
 
 .login {
   margin: 5% 35%;
   background-color: lime;
+  opacity: .6;
 }
 
 .footer {
