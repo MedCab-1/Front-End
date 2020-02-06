@@ -7,13 +7,6 @@ import '../App.css'
 
 
 const Signup = ({ values, errors, touched, status, history }) => {
-    // const [newUser, setNewUser] = useState([]);
-
-    // useEffect(() => {
-    //     if (status === true) {
-    //         history.push('/');
-    //     }
-    // }, [status]);
 
     return (
         <div className='sign-up'>
@@ -42,12 +35,6 @@ const Signup = ({ values, errors, touched, status, history }) => {
                             <p className='login-link'>Already a Member? 
                         <Link to='/loginform'> Login Here</Link></p>
                     </Form>
-                    {/* {newUser.map(user => {
-                        <ul key={user.id}>
-                            <li>Username: {user.username}</li>
-                            <li>Password: {user.password}</li>
-                        </ul>
-                    })} */}
         </div>
     );
 };

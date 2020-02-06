@@ -9,7 +9,7 @@ export default function CharacterList() {
   useEffect(() => {
     axios.get('https://med-cabinet-1.herokuapp.com/strain')
         .then(response => {
-          console.log('flag',response.data)
+          console.log('flag')
           setData(response.data.results)
         })
         .catch(error => {
@@ -20,9 +20,9 @@ export default function CharacterList() {
   
   return (
     <section className="character-list">
-      {data.map(char => (
-        <StrainCard key={char} char={char} />
+      {data.map(item => (
+        <StrainCard key={item} item={item} />
       ))}
     </section>
-  )
+    )
   }

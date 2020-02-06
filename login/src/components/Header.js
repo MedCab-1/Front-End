@@ -11,6 +11,6 @@ export default function Header() {
             <h1>Med Cabinet</h1>
             <div><Link to="/loginform">Log In</Link></div>
             <div><Link to="/signup">Sign Up</Link></div>
-            <div><Link to="/GetStrain">See What We Have to Offer</Link></div>
+            <div><Link to="/GetStrains">See What We Have to Offer</Link></div>
         </div>
 )}
