@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as Yup from 'yup';
 import { withFormik, Form, Field } from 'formik';
 
-const Signup = ({ values, errors, touched, status, history }) => {
+const Signup = ({ values, errors, touched }) => {
     // const [newUser, setNewUser] = useState([]);
 
     // useEffect(() => {
@@ -63,7 +63,7 @@ const FormikSignUpForms = withFormik ({
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
-        const URL = 'https://med-cabinet-1.herokuapp.com/'; 
+        const URL = 'https://med-cabinet-1.herokuapp.com/api/user/register'; 
 
         const newUsers = {
             username: values.username,
@@ -75,7 +75,7 @@ const FormikSignUpForms = withFormik ({
             .then(res => {
                 console.log(`Login Successful`, res);
                 setStatus(res.data);
-                props.history.push('/'); 
+                props.history.push('/display'); 
             })
             .catch(err => console.log(err.response))
     }

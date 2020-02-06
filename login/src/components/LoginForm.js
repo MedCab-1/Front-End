@@ -14,7 +14,7 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
     //     }
     // }, [status]);
     return (
-        <form>
+        <Form>
             <div>
                 {touched.username && errors.username && <p>{errors.username}</p>}
                 <Field type="username" name="username" placeholder="username" />
@@ -23,8 +23,8 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 {touched.password && errors.password && <p>{errors.password}</p>}
                 <Field type="password" name="password" placeholder="password" />
             </div>
-            <button disabled={isSubmitting}>Login</button>
-        </form>
+            <button type='submit'>Login</button>
+        </Form>
       );
     }
     
@@ -43,9 +43,10 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 .required('Field required')
         }),
         handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-            axios.post('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
+            axios.post('https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
+                localStorage.setItem('user', JSON.stringify(res.data))
                 resetForm();
                 setSubmitting(false);
             })
@@ -55,4 +56,4 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
             });
         }
     })(LoginForm);
-    export default FormikLoginForm
+    export default FormikLoginForm;
