@@ -10,7 +10,7 @@ export const NEWUSER_SIGNUP_FAILURE = 'NEWUSER_SIGNUP_FAILURE';
 export const newUser = credentials => dispatch => {
     dispatch({ type: NEWUSER_SIGNUP_START });
     axiosWithAuth()
-        .post('https://med-cabinet-1.herokuapp.com/api/user/signup', credentials)
+        .post('https://med-cab-backend.herokuapp.com/api/user/signup', credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token)
             history.push('/display', res.data.token);

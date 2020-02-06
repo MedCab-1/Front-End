@@ -52,7 +52,7 @@ const FormikSignUpForms = withFormik ({
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
-        const URL = 'https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/register'; 
+        const URL = 'https://med-cab-backend.herokuapp.com/api/user/register'; 
 
         const newUsers = {
             username: values.username,
