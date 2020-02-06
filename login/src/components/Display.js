@@ -1,13 +1,14 @@
 import React from 'react';
-import '../App.css';
+import Header from './Header';
 
-//  import NavBar and StrainCard to this page once ready
+//  import SearchBar to this page once ready
+
+import '../App.css';
 
 const Display = () => {
     return (
         <div>
-          <h1>Med Cabinet Main Page</h1> 
-          {/* delete title after we import components */}
+            {/* import strains  */}
         </div>
     );
 };

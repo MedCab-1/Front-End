@@ -27,12 +27,12 @@ import {
     NEWUSER_SIGNUP_START, NEWUSER_SIGNUP_SUCCESS, NEWUSER_SIGNUP_FAILURE, USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE
 } from '../Actions/index';
 
-// Trying to get our actions to work correctly with login and signup. But getting other errors about node_modules and yup. Will keep working on in the morning.
-
 const initialState = {
     data: [],
     isFetching: false,
-    error: ''
+    error: '',
+    userData: {},
+    getUserData: {}
 };
 
 const reducer = (state = initialState, action) => {

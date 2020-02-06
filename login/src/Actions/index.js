@@ -1,4 +1,7 @@
 import axiosWithAuth from '../utils/axiosWithAuth';
+import {createBrowserHistory} from 'history';
+
+export const history = createBrowserHistory();
 
 export const NEWUSER_SIGNUP_START = 'NEWUSER_SIGNUP_START';
 export const NEWUSER_SIGNUP_SUCCESS = 'NEWUSER_SIGNUP_SUCCESS';
@@ -7,9 +10,10 @@ export const NEWUSER_SIGNUP_FAILURE = 'NEWUSER_SIGNUP_FAILURE';
 export const newUser = credentials => dispatch => {
     dispatch({ type: NEWUSER_SIGNUP_START });
     axiosWithAuth()
-        .post('https://med-cabinet-1.herokuapp.com/api/user/signup', credentials)
+        .post('https://med-cab-backend.herokuapp.com/api/user/signup', credentials)
         .then(res => {
             localStorage.setItem('token', res.data.token)
+            history.push('/display', res.data.token);
         })
         .catch(err => {
             dispatch({ type: NEWUSER_SIGNUP_FAILURE, payload: err.response })
@@ -23,9 +27,11 @@ export const USER_LOGIN_FAILURE = 'USER_LOGIN_FAILURE';
 export const userLogin = userInfo => dispatch => {
     dispatch({ type: USER_LOGIN_START });
     axiosWithAuth()
-        .post('https://med-cabinet-1.herokuapp.com/api/user/login', userInfo)
+        .post('api/user/login', userInfo)
         .then(res => {
             dispatch({ type: USER_LOGIN_SUCCESS, payload: res.data.user })
+            localStorage.setItem('token', res.data.token)
+            history.push('/display')
         })
         .catch(err => {
             console.log(err);
