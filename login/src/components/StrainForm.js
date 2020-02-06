@@ -92,6 +92,7 @@ const StrainForm = () => {
                             <option value='Plum'>Plum</option>
                             <option value='Pear'>Pear</option>
                     </Field>
+                        <button type='submit'>Submit</button>
                 </div>
         </Form>
     );
@@ -103,12 +104,12 @@ const FormikStrains = withFormik({
             type: type || '',
             effect: effect || '',
             flavor: flavor || ''
-        } //the return above might need to change
+        } 
     }, 
     
     handleSubmit(values, {setStatus}) {
         axios 
-            .get('https://med-cabinet-1.herokuapp.com', values)
+            .get('https://dashboard.heroku.com/apps/med-cabinet-1/predict', values)
             .then(res => {
                 setStatus(res.data);
                 console.log(res);

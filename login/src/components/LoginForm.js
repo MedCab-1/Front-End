@@ -9,22 +9,17 @@ import '../App.css';
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
     return (
-        <div className="login">
-            <h1>Welcome</h1>
-            <h3>Log in to view your account</h3>
-            <h3>Don't have an account? <Link to='/Signup'>Sign up</Link></h3>
-            <form>
-                <div>
-                    {touched.username && errors.username && <p>{errors.username}</p>}
-                    <Field type="username" name="username" placeholder="username" />
-                </div>
-                <div>
-                    {touched.password && errors.password && <p>{errors.password}</p>}
-                    <Field type="password" name="password" placeholder="password" />
-                </div>
-                <button disabled={isSubmitting}>Login</button>
-            </form>
-        </div>
+        <Form>
+            <div>
+                {touched.username && errors.username && <p>{errors.username}</p>}
+                <Field type="username" name="username" placeholder="username" />
+            </div>
+            <div>
+                {touched.password && errors.password && <p>{errors.password}</p>}
+                <Field type="password" name="password" placeholder="password" />
+            </div>
+            <button type='submit'>Login</button>
+        </Form>
       );
     }
     
@@ -42,16 +37,18 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 .min(8, "Password must be at least 8 characters")
                 .required('Field required')
         }),
+      
         handleSubmit(values, { setStatus, props }) {
             axios.get('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
                 setStatus(res.data);
                 props.history.push('/');
+
             })
             .catch(err => {
                 console.error(err);
             });
         }
     })(LoginForm);
-    export default FormikLoginForm
+    export default FormikLoginForm;
