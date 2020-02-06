@@ -6,14 +6,7 @@ import { withFormik, Form, Field } from 'formik';
 import '../App.css'
 
 
-const Signup = ({ values, errors, touched }) => {
-    // const [newUser, setNewUser] = useState([]);
-
-    // useEffect(() => {
-    //     if (status === true) {
-    //         history.push('/');
-    //     }
-    // }, [status]);
+const Signup = ({ values, errors, touched, status, history }) => {
 
     return (
         <div className='sign-up'>
@@ -42,12 +35,6 @@ const Signup = ({ values, errors, touched }) => {
                             <p className='login-link'>Already a Member? 
                         <Link to='/loginform'> Login Here</Link></p>
                     </Form>
-                    {/* {newUser.map(user => {
-                        <ul key={user.id}>
-                            <li>Username: {user.username}</li>
-                            <li>Password: {user.password}</li>
-                        </ul>
-                    })} */}
         </div>
     );
 };
@@ -65,7 +52,7 @@ const FormikSignUpForms = withFormik ({
     }),
     handleSubmit(values, { setStatus, props }) {
         console.log('Submit', values);
-        const URL = 'https://med-cabinet-1.herokuapp.com/api/user/register'; 
+        const URL = 'https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/register'; 
 
         const newUsers = {
             username: values.username,

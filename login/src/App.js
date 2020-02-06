@@ -5,15 +5,24 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import Signup from './components/Signup';
 import StrainForm from './components/StrainForm';
+import './App.css'
+import cannabisleaf from './images/cannabis-leaf.png'
+import GetStrains from './components/GetStrains';
 
 export default function App() {
   return (
     <div className="App">
-      <Header />       
-        <Route exact path='/login' component={LoginForm} />
-        <Route exact path='/signup' component={Signup} />
-        <Route exact path='/strains' component={StrainForm} />
-      <Footer />
+          <Header />
+          <img src={cannabisleaf}/>
+        <Route path='/loginform' component={LoginForm} />
+          
+        <Route path='/Signup' >
+          <Signup />
+        </Route>
+        <Route path='/GetStrains' >
+          <GetStrains />
+        </Route>
+          <Footer />
     </div>
   )
 };

@@ -30,7 +30,9 @@ import {
 const initialState = {
     data: [],
     isFetching: false,
-    error: ''
+    error: '',
+    userData: {},
+    getUserData: {}
 };
 
 const reducer = (state = initialState, action) => {
