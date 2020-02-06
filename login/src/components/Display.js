@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css';
 
 //  import NavBar and StrainCard to this page once ready
 

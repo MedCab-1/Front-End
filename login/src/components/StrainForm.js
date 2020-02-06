@@ -1,6 +1,7 @@
 import React from 'react';
 import {Form, Field, withFormik} from 'formik';
 import axios from 'axios';
+import '../App.css'
 
 const StrainForm = () => {
     return (

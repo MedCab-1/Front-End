@@ -3,16 +3,11 @@ import { Formik, Form, Field, ErrorMessage, withFormik, validateYupSchema, yupTo
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import '../App.css';
+
 
 
 function LoginForm({ values, errors, touched, isSubmitting }) {
-    // const [user, setUser] = useState([]);
-
-    // useEffect(() => {
-    //     if (status === true) {
-    //         history.pushState('/')
-    //     }
-    // }, [status]);
     return (
         <Form>
             <div>
@@ -42,17 +37,17 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 .min(8, "Password must be at least 8 characters")
                 .required('Field required')
         }),
-        handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-            axios.post('https://med-cabinet-1.herokuapp.com/api/user/login', values)
+      
+        handleSubmit(values, { setStatus, props }) {
+            axios.get('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
-                localStorage.setItem('user', JSON.stringify(res.data))
-                resetForm();
-                setSubmitting(false);
+                setStatus(res.data);
+                props.history.push('/');
+
             })
             .catch(err => {
                 console.error(err);
-                setSubmitting(false);
             });
         }
     })(LoginForm);
