@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import * as Yup from 'yup';
 import { withFormik, Form, Field } from 'formik';
+import '../App.css'
+
 
 const Signup = ({ values, errors, touched }) => {
     // const [newUser, setNewUser] = useState([]);
@@ -15,7 +17,7 @@ const Signup = ({ values, errors, touched }) => {
 
     return (
         <div className='sign-up'>
-            <h1>Med Cabinet</h1>
+            <h1>Welcome</h1>
                 <h3>Sign Up Today!</h3>
                     <Form>
                         <Field
@@ -38,7 +40,7 @@ const Signup = ({ values, errors, touched }) => {
                         )}
                         <button type='submit'>Sign Up</button>
                             <p className='login-link'>Already a Member? 
-                        <Link to='/login'> Login Here</Link></p>
+                        <Link to='/loginform'> Login Here</Link></p>
                     </Form>
                     {/* {newUser.map(user => {
                         <ul key={user.id}>
