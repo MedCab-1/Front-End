@@ -2,9 +2,19 @@
   text-align: center;
 }
 
+.nav {
+  text-align: left;
+  margin: 5%;
+}
+
+.head {
+  margin-left: 17%;
+}
+
 .header {
-  margin-bottom: 5%;
   font-size: xx-large;
+  display: flex;
+  justify-content: space-between;
 }
 
 .sign-up {
