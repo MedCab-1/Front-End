@@ -49,16 +49,15 @@ function LoginForm({ values, errors, touched, isSubmitting }) {
                 .min(8, "Password must be at least 8 characters")
                 .required('Field required')
         }),
-        handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+        handleSubmit(values, { setStatus, props }) {
             axios.post('https://cors-anywhere.herokuapp.com/https://med-cabinet-1.herokuapp.com/api/user/login', values)
             .then(res => {
                 console.log(res);
-                resetForm();
-                setSubmitting(false);
+                setStatus(res.data);
+                props.history.push('/');
             })
             .catch(err => {
                 console.error(err);
-                setSubmitting(false);
             });
         }
     })(LoginForm);
