@@ -39,6 +39,34 @@ export const userLogin = userInfo => dispatch => {
         });
 };
 
+export const USER_LOGOUT_START = 'USER_LOGOUT_START';
+export const USER_LOGOUT_SUCCESS = 'USER_LOGOUT_SUCCESS';
+export const USER_LOGOUT_FAILURE = 'USER_LOGOUT_FAILURE'; 
+
+export const userLogout = () => dispatch => {
+    dispatch({ type: USER_LOGOUT_START });
+    localStorage.removeItem('token');
+    dispatch({ type: USER_LOGOUT_SUCCESS })
+};
+
+export const POST_STRAIN_START = 'POST_STRAIN_START';
+export const POST_STRAIN_SUCCESS = 'POST_STRAIN_SUCCESS';
+export const POST_STRAIN_FAILURE = 'POST_STRAIN_FAILURE';
+
+export const postStrainSearch = strain => dispatch => {
+    dispatch({ type: POST_STRAIN_SUCCESS, payload: strain });
+    axiosWithAuth()
+        .post('/api/strain', strain)
+        .then(res => {
+            dispatch({ type: POST_STRAIN_SUCCESS, payload: res.data })
+        })
+        // .catch(err => {
+        //     dispatch({ type: POST_STRAIN_FAILURE, payload: err.response })
+        // });
+};
+
+
+
 export const FETCH_USER_STRAINS_REQUEST = 'FETCH_USER_STRAINS_REQUEST';
 export const fetchUserStrainsRequest = () => ({
     type: FETCH_USER_STRAINS_REQUEST

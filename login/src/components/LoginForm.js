@@ -18,7 +18,7 @@ const LoginForm = (props) => {
     console.log(loginInfo)
 
     axios
-        .post('https://cors-anywhere.herokuapp.com/https://med-cab-backend.herokuapp.com/api/user/login', loginInfo) 
+        .post('https://med-cab-backend.herokuapp.com/api/user/login', loginInfo) 
         .then(res => {
             localStorage.setItem('token', res.data.payload)
             props.history.push('/display');
