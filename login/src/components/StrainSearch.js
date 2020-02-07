@@ -55,6 +55,13 @@ const StrainSearch = (props) => {
             .catch(err => console.log(err.response))
     };
 
+    // const editStrains = e => {
+    //     e.preventDefault();
+    //     axiosWithAuth()
+    //     .put('/display', data)
+    //     .then(res => console.log(res.data))
+    // }
+
     return (
         < div className="strains">
             <form onSubmit={handleSubmit}>
@@ -66,7 +73,7 @@ const StrainSearch = (props) => {
                     placeholder="Search Strains"
                     onChange={handleInputChange}
                 />
-            <button onClick={handleSubmit}>Submit</button>
+            {/* <button onClick={handleSubmit}>Submit</button> */}
             <button onClick={postStrain}>Add Strain!</button>
             {postStrains.map(prop => {
                 return (
