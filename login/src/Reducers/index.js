@@ -24,7 +24,7 @@ import {
     FILTER_USER_STRAINS_SUCCESS,
     FILTER_USER_STRAINS_ERROR,
     CLEAR_FEEDBACK,
-    NEWUSER_SIGNUP_START, NEWUSER_SIGNUP_SUCCESS, NEWUSER_SIGNUP_FAILURE, USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE
+    NEWUSER_SIGNUP_START, NEWUSER_SIGNUP_SUCCESS, NEWUSER_SIGNUP_FAILURE, USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, USER_LOGOUT_START, USER_LOGOUT_SUCCESS, USER_LOGOUT_FAILURE, POST_STRAIN_START, POST_STRAIN_SUCCESS, POST_STRAIN_FAILURE
 } from '../Actions/index';
 
 const initialState = {
@@ -67,6 +67,40 @@ const reducer = (state = initialState, action) => {
                 data: action.payload
             };
         case USER_LOGIN_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            };
+        case USER_LOGOUT_START:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case USER_LOGOUT_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload
+            };
+        case USER_LOGOUT_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload
+            };
+        case POST_STRAIN_START:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case POST_STRAIN_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                data: action.payload
+            };
+        case POST_STRAIN_FAILURE:
             return {
                 ...state,
                 isFetching: false,
