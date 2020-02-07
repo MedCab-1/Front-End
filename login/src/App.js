@@ -19,8 +19,6 @@ export default function App() {
         <Route exact path='/loginform' component={LoginForm} /> 
         <Route exact path='/' component={Signup} />
         <Route path='/display' component={Display} />
-        
-      
         {/* <Route path='/GetStrains' >
           <GetStrains />
         </Route> */}
