@@ -7,7 +7,7 @@ import Signup from './components/Signup';
 import StrainForm from './components/StrainForm';
 import './App.css'
 import cannabisleaf from './images/cannabis-leaf.png'
-import GetStrains from './components/GetStrains';
+// import GetStrains from './components/GetStrains';
 import PrivateRoute from './components/PrivateRoute';
 import Display from './components/Display';
 
@@ -22,9 +22,9 @@ export default function App() {
         <PrivateRoute path='/display' component={Display} />
         
       
-        <Route path='/GetStrains' >
+        {/* <Route path='/GetStrains' >
           <GetStrains />
-        </Route>
+        </Route> */}
           <Footer />
     </div>
   )
