@@ -56,7 +56,7 @@ export const POST_STRAIN_FAILURE = 'POST_STRAIN_FAILURE';
 export const postStrainSearch = strain => dispatch => {
     dispatch({ type: POST_STRAIN_SUCCESS, payload: strain });
     axiosWithAuth()
-        .post('/api/strain', strain)
+        .post('/api/strain/:strain', strain)
         .then(res => {
             dispatch({ type: POST_STRAIN_SUCCESS, payload: res.data })
         })

@@ -16,7 +16,7 @@ const StrainSearch = (props) => {
 
     useEffect(() => {
         axiosWithAuth()
-            .get('https://med-cab-backend.herokuapp.com/api/strains')
+            .get('https://med-cab-backend.herokuapp.com/api/strain/:str')
             .then(res => {
                 // setPostStrains(res.data)
                 console.log(res)
